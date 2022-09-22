@@ -1,0 +1,47 @@
+$headerBg: #24292e;
+$headerTextColor: #fff;
+
+$headerSearchBorder: #444d56;
+$headerSearchBg: #24292e;
+
+$textPrimary: #24292e;
+$textAlt1: #586069;
+$textAlt2: #586069;
+
+$primaryBtn: #fafbfc;
+$borderColor: #eaecef;
+
+$linkColor: #0366d6;
+
+$width-xs: 0;
+$width-sm: 544px;
+$width-md: 768px;
+$width-lg: 1012px;
+$width-xl: 1280px;
+
+@mixin mobile {
+    @media (max-width: #{$width-md}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$width-md}) and (max-width: #{$width-lg - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$width-lg}) {
+        @content;
+    }
+}
+
+@mixin page-padding {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+    @include mobile() {
+        padding: 0 16px;
+    }
+}

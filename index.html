@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Concrete Strength Prediction Model</title>
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <div class="header">
+          <h2 class="header-title">Model for Predicting compressive strength of concrete from nanoparticles</h2>
+        </div>
+        <form class="form-field" onsubmit="event.preventDefault();predict()">
+          <div class="form-field__center">
+            <img src="./assets/images/ml.svg" alt="ml_pic" />
+            <div class="form-field__box">
+              <label>W/C (Ratio per mass)</label>
+              <input
+                name="w/c"
+                required
+                class="form-field__input"
+                placeholder="Enter W/C"
+                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+              />
+            </div>
+            <div class="form-field__box">
+              <label>Curing time (Days) </label>
+              <select name="curing_time" required class="form-field__input" placeholder="Enter Curing Time">
+                <option value="">Select an option</option>
+                <option value="3">3 days</option>
+                <option value="7">7 days</option>
+                <option value="14">14 days</option>
+                <option value="21">21 days</option>
+                <option value="28">28 days</option>
+              </select>
+            </div>
+            <div class="form-field__box">
+              <label>% of Nanoslica (NS)</label>
+              <input
+                name="nanosilica"
+                required
+                class="form-field__input"
+                placeholder="Enter percent of NanoSilica"
+                type="number"
+                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+              />
+            </div>
+            <div class="form-field__box">
+              <label>% of MicroSilica (MS)</label>
+              <input
+                name="microsilica"
+                required
+                class="form-field__input"
+                placeholder="Enter percent of MicroSilica"
+                type="number"
+                onkeypress="return
+              (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                onKeyDown="event.key === 'Enter' && predict()"
+              />
+            </div>
+            <button class="btn form-field__button">Predict</button>
+          </div>
+        </form>
+        <div class="modal-container hide">
+          <div id="page-loader" class="page-loader">
+            <img src="./assets/images/loader.svg" />
+          </div>
+          <div class="result-container hide">
+            <p class="modal-close" onclick="closeModal()">x</p>
+            <img src="./assets/images/success.svg" width="50px" height="50px" />
+            <h2 class="result__title">Predicted Strength is:</h2>
+            <h3 class="result__value" data-result="result"></h3>
+          </div>
+          <div class="error-container hide">
+            <p class="error-text">An error occured</p>
+            <a class="btn" href="/"> Try again</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
