@@ -57,7 +57,7 @@
                 class="form-field__input"
                 placeholder="Enter percent of MicroSilica"
                 type="text"
-                onKeyDown="event.key === 'Enter' && predict()"
+                onKeyDown="event.key === 'Enter' && predict(); reset()"
                 onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))|| event.charCode == 46"
               />
             </div>
