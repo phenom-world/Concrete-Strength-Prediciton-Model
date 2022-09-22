@@ -14,18 +14,12 @@
         <div class="header">
           <h2 class="header-title">Model for Predicting compressive strength of concrete from nanoparticles</h2>
         </div>
-        <form class="form-field" onsubmit="event.preventDefault();predict();reset()">
+        <form class="form-field" onsubmit="event.preventDefault();predict();reset();">
           <div class="form-field__center">
             <img src="./assets/images/ml.svg" alt="ml_pic" />
             <div class="form-field__box">
               <label>W/C (Ratio per mass)</label>
-              <input
-                name="w/c"
-                required
-                class="form-field__input"
-                placeholder="Enter W/C"
-                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
-              />
+              <input name="w/c" required class="form-field__input" placeholder="Enter W/C" />
             </div>
             <div class="form-field__box">
               <label>Curing time (Days) </label>
@@ -40,14 +34,7 @@
             </div>
             <div class="form-field__box">
               <label>% of NanoSilica (NS)</label>
-              <input
-                name="nanosilica"
-                required
-                class="form-field__input"
-                placeholder="Enter percent of NanoSilica"
-                type="number"
-                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
-              />
+              <input name="nanosilica" required class="form-field__input" placeholder="Enter percent of NanoSilica" type="number" />
             </div>
             <div class="form-field__box">
               <label>% of MicroSilica (MS)</label>
@@ -57,8 +44,6 @@
                 class="form-field__input"
                 placeholder="Enter percent of MicroSilica"
                 type="number"
-                onkeypress="return
-              (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
                 onKeyDown="event.key === 'Enter' && predict()"
               />
             </div>
@@ -72,7 +57,7 @@
           <div class="result-container hide">
             <p class="modal-close" onclick="closeModal()">x</p>
             <img src="./assets/images/success.svg" width="50px" height="50px" />
-            <h2 class="result__title">Predicted Strength is:</h2>
+            <h2 class="result__title">The compressive strength of the concrete is:</h2>
             <h3 class="result__value" data-result="result"></h3>
           </div>
           <div class="error-container hide">
