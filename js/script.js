@@ -11,6 +11,8 @@ const closeModal = () => {
 
 const predict = () => {
   document.querySelector(".modal-container").classList.add("modal");
+  document.querySelector(".page-loader").classList.remove("hide");
+  document.querySelector(".result-container").classList.remove("result");
   fetch("https://shrouded-thicket-14794.herokuapp.com/predict", {
     method: "POST",
     headers: {
