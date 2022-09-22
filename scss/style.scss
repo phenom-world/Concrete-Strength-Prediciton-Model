@@ -57,6 +57,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  @include mobile {
+    width: 80px;
+    height: 80px;
+  }
 
   @keyframes scale {
     100% {
@@ -162,6 +166,10 @@ body {
   border-radius: 6px;
   position: relative;
 
+  @include mobile {
+    width: auto;
+    padding: 3rem 1rem;
+  }
   .modal-close {
     position: absolute;
     top: 0;

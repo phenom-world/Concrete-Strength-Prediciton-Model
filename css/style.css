@@ -55,6 +55,12 @@ body *:after {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .page-loader {
+    width: 80px;
+    height: 80px;
+  }
+}
 @-webkit-keyframes scale {
   100% {
     transform: scale(1.3);
@@ -164,6 +170,12 @@ body *:after {
   text-align: center;
   border-radius: 6px;
   position: relative;
+}
+@media (max-width: 768px) {
+  .result {
+    width: auto;
+    padding: 3rem 1rem;
+  }
 }
 .result .modal-close {
   position: absolute;
