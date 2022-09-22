@@ -19,13 +19,7 @@
             <img src="./assets/images/ml.svg" alt="ml_pic" />
             <div class="form-field__box">
               <label>W/C (Ratio per mass)</label>
-              <input
-                name="w/c"
-                required
-                class="form-field__input"
-                placeholder="Enter W/C"
-                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))|| event.charCode == 46"
-              />
+              <input name="w/c" required class="form-field__input" placeholder="Enter W/C" type="number" step="any" />
             </div>
             <div class="form-field__box">
               <label>Curing time (Days) </label>
@@ -40,25 +34,11 @@
             </div>
             <div class="form-field__box">
               <label>% of NanoSilica (NS)</label>
-              <input
-                name="nanosilica"
-                required
-                class="form-field__input"
-                placeholder="Enter percent of NanoSilica"
-                type="text"
-                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))|| event.charCode == 46"
-              />
+              <input name="nanosilica" required class="form-field__input" placeholder="Enter percent of NanoSilica" type="number" step="any" />
             </div>
             <div class="form-field__box">
               <label>% of MicroSilica (MS)</label>
-              <input
-                name="microsilica"
-                required
-                class="form-field__input"
-                placeholder="Enter percent of MicroSilica"
-                type="text"
-                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))|| event.charCode == 46"
-              />
+              <input name="microsilica" required class="form-field__input" placeholder="Enter percent of MicroSilica" type="number" step="any" />
             </div>
             <button class="btn form-field__button">Predict</button>
           </div>
